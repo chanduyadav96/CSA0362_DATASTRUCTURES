@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+// Function to search for a registration number in an array
+int searchRegistrationNumber(int regNumbers[], int size, int target) {
+	
+    for (int i = 0; i < size; i++) {
+        if (regNumbers[i] == target) {
+            return i; // Return the index where the registration number is found
+        }
+    }
+    return -1; // Return -1 if registration number is not found
+}
+
+int main() {
+    int regNumbers[] = {101, 102, 103, 104, 105, 106, 107, 108, 109, 110};
+    int size = sizeof(regNumbers) / sizeof(regNumbers[0]);
+
+    int target = 105;
+    int index = searchRegistrationNumber(regNumbers, size, target);
+
+    if (index != -1) {
+        printf("Registration number %d found at index %d.\n", target, index);
+    } else {
+        printf("Registration number %d not found.\n", target);
+    }
+
+}
